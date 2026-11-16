@@ -1,56 +1,115 @@
-# b2b-gateway-hub
-# Automazione Operativa per PMI — Middleware ETL & Connettori Asincroni
+# b2b-gateway-hub — Fault-Tolerant B2B API Gateway & Asynchronous ETL Middleware
 
-## 📌 Panoramica del Prodotto
+🇬🇧 / 🇺🇸 **ENGLISH** | [🇮🇹 Vai alla versione in Italiano](#-italiano)
 
-Questa applicazione è una piattaforma di automazione operativa progettata per **PMI, agenzie e team operativi** che necessitano di gestire flussi di dati e processi ripetitivi senza dispendio di risorse umane.
+[![Portfolio](https://img.shields.io/badge/Portfolio-antoniangeloflore.com-0d6efd?style=flat-square)](https://antoniangeloflore.com)
+[![Environment](https://img.shields.io/badge/Production-Live%20on%20Linux%20VPS-198754?style=flat-square)](https://antoniangeloflore.com)
+[![Stack](https://img.shields.io/badge/Stack-Node.js%20%7C%20Express%20%7C%20MySQL%20%7C%20Linux-212529?style=flat-square)](https://github.com/pratico)
+[![Privacy](https://img.shields.io/badge/Compliance-GDPR%20Safe%20%2F%20Zero--PII-dc3545?style=flat-square)](https://antoniangeloflore.com)
 
-Non si tratta di un chatbot generico: è un **middleware ETL e sistema di connettori asincroni** che raccoglie, trasforma e distribuisce informazioni tra i diversi strumenti che l'azienda già utilizza, trasformando processi manuali in pipeline automatiche e affidabili.
+## 📌 Product Overview
 
-## 🎯 Il Problema Risolto
+**b2b-gateway-hub** is a production-grade **B2B API Gateway, ETL middleware, and asynchronous connector hub** engineered for **SMEs, web agencies, and e-commerce operations** that need to synchronize data flows across ERPs, storefronts, and external webhooks without losing orders or exposing sensitive data.
 
-Nella vita reale di una piccola o media impresa, ogni giorno si perdono ore preziose in attività a basso valore:
+Deployed and running live on a **dedicated Linux VPS**, it acts as a fault-tolerant traffic controller: incoming payloads are validated, normalized, deduplicated, and routed asynchronously to downstream systems—eliminating manual data entry and silent webhook failures.
 
-- **Trascodifica manuale** di dati tra fogli di calcolo, gestionali e piattaforme online.
-- **Errori di copia-incolla** che generano ritardi, contestazioni e rework.
-- **Colli di bottiglia operativi**: un solo persona "blocca" l'intero flusso di lavoro.
-- **Comunicazioni lente** con clienti e fornitori per attività che potrebbero essere immediate.
+## 🎥 Live VPS Production & `b2b-dlq-hub` Integration Demo
 
-Questa applicazione elimina questi attriti: i dati entrano una sola volta, vengono elaborati automaticamente e arrivano a destinazione senza intervento umano, con tolleranza ai guasti integrata per garantire continuità operativa anche in caso di anomalie.
+* **Live Architecture Benchmark:** **b2b-gateway-hub** is actively deployed on a Linux VPS and showcased in live technical video pitches working in tandem with [**b2b-dlq-hub**](https://github.com/pratico/b2b-dlq-hub) to ingest, route, and stress-test real payload streams under simulated endpoint failures.
+* **Watch the Video Pitch & Live Demos:** [https://antoniangeloflore.com](https://antoniangeloflore.com) *(Note: The portfolio portal and the two embedded technical video pitches are currently in Italian, while B2B engineering delivery, documentation, and asynchronous support are fully available in English).*
 
-## ⚙️ Come Funziona (Flusso Operativo Utente)
+## 🎯 The Problem Solved
 
-Il flusso è pensato per essere semplice dal punto di vista dell'utente finale, senza mai esporre la complessità tecnica interna:
+In real-world B2B and e-commerce operations, fragile integrations and manual data transfers create costly bottlenecks:
 
-1. **Inserimento dell'input** — L'operatore (o il sistema aziendale) fornisce i dati di partenza attraverso un'interfaccia semplice e guidata.
-2. **Elaborazione automatica** — La piattaforma valida, pulisce e trasforma i dati secondo le regole operative definite per il business.
-3. **Distribuzione del risultato** — Le informazioni elaborate vengono instradate verso la destinazione corretta (archiviazione, notifiche, report, sistemi di terze parti) in modalità asincrona.
-4. **Esito e tracciabilità** — L'utente riceve una conferma chiara dell'esito dell'operazione e può consultare in ogni momento lo stato dei processi completati.
+* **Silent Webhook & Order Losses:** When an external ERP or store API slows down or returns a `502/504` timeout, standard integrations drop payloads permanently.
+* **Race Conditions & Duplicate Processing:** Concurrent webhook retries often create duplicate orders or corrupted inventory counts.
+* **Manual Data Transcoding:** Teams waste hours every week manually moving and reformatting CSV/XML/JSON records between spreadsheets, ERPs, and online platforms.
+* **Single-Operator Bottlenecks:** Mission-critical synchronization depends on fragile scripts or manual intervention.
 
-Il tutto avviene **senza interazione umana superflua**: una volta configurato il flusso, il sistema lavora in autonomia.
+**b2b-gateway-hub** removes these points of failure: data enters once through a protected gateway, is processed asynchronously with built-in fault tolerance, and reaches every target system reliably.
 
-## 🚀 Funzionalità Principali & Vantaggi Operativi (ROI)
+## ⚙️ Operator & System Workflow
 
-| Funzionalità | Vantaggio Concreto |
-|---|---|
-| **Automazione end-to-end** | Riduzione drastica dei tempi di gestione manuale dei dati |
-| **Connettori asincroni** | I processi non si bloccano: ogni attività viene completata indipendentemente dal carico |
-| **Tolleranza ai guasti** | Continuità operativa garantita: gli errori vengono gestiti senza perdita di dati |
-| **Interfaccia responsive** | Utilizzabile da desktop e mobile, senza curva di apprendimento |
-| **ROI immediato** | Payback rapido: il costo dell'automazione si ripaga nelle prime settimane di utilizzo |
-| **Asset scalabile** | Un solo operatore può gestire volumi di lavoro che richiederebbero più persone |
+The workflow is designed for zero manual friction once configured:
 
-## 🛠️ Tecnologie Utilizzate (Ad Alto Livello)
+1. **Controlled Ingestion** — External systems, webhooks, or operators submit payloads to the gateway via hardened REST endpoints or guided web interfaces.
+2. **Validation, Deduplication & ETL Normalization** — The engine sanitizes, maps, and validates incoming records according to deterministic business rules before any downstream write occurs.
+3. **Asynchronous Routing & Single-Flight Protection** — Requests are queued and dispatched asynchronously, preventing race conditions and traffic spikes from overwhelming target ERPs or databases.
+4. **Full Traceability & Replay** — Every transaction is logged in MySQL with real-time status visibility, enabling instant inspection and safe idempotent replay in case of downstream downtime.
 
-Lo stack tecnologico è scelto per **stabilità, maturità e prestazioni elevate**:
+## 🚀 Key Capabilities & Operational ROI
 
-- **Node.js / Express** — Runtime leggero e ad alte prestazioni per la gestione di processi concorrenti e operazioni asincrone.
-- **MySQL** — Database relazionale consolidato, affidabile e provato in contesti produttivi mission-critical.
-- **Bootstrap 5** — Interfaccia utente moderna, responsive e accessibile su qualsiasi dispositivo.
-- **Ambiente Linux** — Piattaforma solida e sicura per carichi di lavoro continui.
+* **End-to-End Asynchronous Automation:** Eliminates repetitive manual data transfers across disconnected business platforms.
+* **Fault Tolerance & Zero Lost Payloads:** Built-in retry mechanisms and integration with **b2b-dlq-hub** ensure operational continuity even when third-party APIs go offline.
+* **High-Concurrency Stability:** Engineered to absorb traffic bursts without blocking the main event loop or corrupting state.
+* **Responsive Control Interface:** Clean Bootstrap 5 dashboard accessible from desktop and mobile for real-time queue monitoring.
+* **Immediate ROI & Single-Operator Leverage:** A single technical operator can govern high-volume data pipelines that would otherwise require dedicated administrative staff, paying back deployment costs within the first weeks.
 
-Questa combinazione garantisce un sistema robusto, manutenibile e capace di crescere con le esigenze del business.
+## 🛠️ High-Level Technology Stack
+
+* **Node.js & Express** — Non-blocking, event-driven runtime engineered for high-concurrency webhook ingestion and asynchronous queue workers.
+* **MySQL** — Battle-tested relational persistence for transactional logs, payload state tracking, and idempotency keys.
+* **Bootstrap 5** — Lightweight, responsive operational dashboard with zero frontend bloat.
+* **Linux VPS (PM2 / Nginx)** — Hardened production deployment for continuous 24/7 unattended execution.
+
+## 🔒 Confidentiality Notice & B2B Collaboration
+
+* **Proprietary Software Asset (All Rights Reserved):** This repository serves as a functional and architectural showcase within the Professional Portfolio ([https://antoniangeloflore.com](https://antoniangeloflore.com)). For operational security and Non-Disclosure Agreement (NDA) compliance, the production source code and internal infrastructure credentials are not publicly exposed.
+* **Custom B2B Integrations & Free 50-Row / Payload Evaluation:** Available for custom API/Webhook stabilization, high-volume ETL pipelines, and white-label licensing via an **asynchronous, zero-call workflow**. Connect on [LinkedIn](https://www.linkedin.com/in/antoniangelo-f-30003622/) or reach out through [antoniangeloflore.com](https://antoniangeloflore.com).
 
 ---
 
-🔒 **Asset Software Proprietario:** Questo repository ha finalità di presentazione funzionale per il Portfolio Professionale (antoniangeloflore.com). Per ragioni di sicurezza operativa e accordi di riservatezza (NDA), il codice sorgente e le specifiche infrastrutturali non sono esposti pubblicamente.
+<a name="-italiano"></a>
+## 🇮🇹 ITALIANO
+
+# b2b-gateway-hub — Gateway API B2B Tollerante ai Guasti & Middleware ETL Asincrono
+
+## 📌 Panoramica del Prodotto
+
+**b2b-gateway-hub** è un **API Gateway B2B, middleware ETL e hub di connettori asincroni** progettato per **PMI, web agency e team e-commerce** che necessitano di sincronizzare flussi di dati tra gestionali (ERP), store online e webhook esterni senza perdere ordini né esporre dati sensibili.
+
+Attivo e funzionante in produzione su **VPS Linux dedicato**, opera come centrale di smistamento resiliente: i payload in ingresso vengono validati, normalizzati, deduplicati e instradati in modalità asincrona verso i sistemi di destinazione, azzerando il data-entry manuale e i guasti silenziosi delle API.
+
+## 🎥 Ambiente Live su VPS & Demo di Integrazione con `b2b-dlq-hub`
+
+* **Architettura Verificata in Produzione:** **b2b-gateway-hub** è installato e operativo su VPS Linux e viene mostrato nei Video Pitch tecnici in sinergia con [**b2b-dlq-hub**](https://github.com/pratico/b2b-dlq-hub) per ricevere, instradare e testare flussi di dati reali simulando guasti e picchi di carico.
+* **Guarda i Video Pitch e le Demo Tecniche:** [https://antoniangeloflore.com](https://antoniangeloflore.com)
+
+## 🎯 Il Problema Risolto
+
+Nella gestione operativa quotidiana di PMI e progetti e-commerce, integrazioni fragili e passaggi manuali generano costi nascosti e blocchi operativi:
+
+* **Perdita Silenziosa di Ordini e Webhook:** Quando un gestionale o un'API esterna rallenta o va in timeout (`502/504`), le integrazioni standard perdono i dati trasmessi.
+* **Race Condition e Duplicazioni:** I tentativi simultanei di reinvio dei webhook generano ordini duplicati o disallineamenti di magazzino.
+* **Trascodifica Manuale dei Dati:** Ore perse ogni settimana a spostare e formattare tracciati CSV/XML/JSON tra fogli di calcolo, ERP e piattaforme web.
+* **Colli di Bottiglia Operativi:** Flussi critici bloccati da script fragili o dalla necessità di intervento manuale.
+
+**b2b-gateway-hub** elimina questi attriti: i dati entrano una sola volta attraverso un gateway protetto, vengono elaborati in modo asincrono con tolleranza ai guasti integrata e raggiungono ogni destinazione in sicurezza.
+
+## ⚙️ Come Funziona (Flusso Operativo)
+
+1. **Acquisizione Controllata** — Sistemi esterni, webhook o operatori inviano i dati al gateway tramite endpoint REST protetti o interfacce guidate.
+2. **Validazione, Deduplicazione e Normalizzazione ETL** — Il motore sanitizza, mappa e valida i record secondo regole deterministiche prima di qualsiasi scrittura a valle.
+3. **Instradamento Asincrono & Protezione Single-Flight** — Le richieste vengono accodate e smistate in modo asincrono, evitando che picchi di traffico o richieste concorrenti mandino in blocco i sistemi destinatari.
+4. **Tracciabilità Completa e Replay Idempotente** — Ogni transazione è registrata su MySQL con stato consultabile in tempo reale, permettendo verifiche immediate e il replay sicuro in caso di indisponibilità temporanea degli endpoint esterni.
+
+## 🚀 Funzionalità Principali & Vantaggi Operativi (ROI)
+
+* **Automazione End-to-End:** Riduzione drastica dei tempi di gestione e sincronizzazione manuale dei dati.
+* **Tolleranza ai Guasti & Zero Dati Persi:** Meccanismi di retry integrati e interoperabilità nativa con **b2b-dlq-hub** per garantire continuità operativa anche in caso di anomalie esterne.
+* **Stabilità ad Alta Concorrenza:** Progettato per assorbire picchi di richieste senza bloccare i processi né corrompere i dati.
+* **Interfaccia Responsive:** Pannello di controllo Bootstrap 5 consultabile da desktop e mobile senza curva di apprendimento.
+* **ROI Immediato & Leva Singolo Operatore:** Un solo operatore tecnico può governare volumi di flussi che richiederebbero personale dedicato, ripagando l'investimento nelle prime settimane.
+
+## 🛠️ Tecnologie Utilizzate (Ad Alto Livello)
+
+* **Node.js & Express** — Runtime asincrono ad alte prestazioni per la gestione di webhook concorrenti e worker in coda.
+* **MySQL** — Database relazionale consolidato per log transazionali, tracciamento stati e chiavi di idempotenza.
+* **Bootstrap 5** — Interfaccia operativa leggera, responsive e immediata.
+* **VPS Linux (PM2 / Nginx)** — Infrastruttura di produzione per esecuzione continua 24/7.
+
+## 🔒 Nota di Riservatezza & Collaborazioni B2B
+
+* **Asset Software Proprietario (Tutti i diritti riservati):** Questo repository ha finalità di presentazione funzionale e architetturale per il Portfolio Professionale ([https://antoniangeloflore.com](https://antoniangeloflore.com)). Per ragioni di sicurezza operativa e accordi di riservatezza (NDA), il codice sorgente di produzione e le specifiche infrastrutturali non sono esposti pubblicamente.
+* **Integrazioni B2B Custom & Test Gratuito:** Disponibile per messa in sicurezza di flussi API/Webhook, pipeline ETL ad alto volume e licenze White-Label con **operatività 100% asincrona (zero call)**. Contattami su [LinkedIn](https://www.linkedin.com/in/antoniangelo-f-30003622/) o tramite [antoniangeloflore.com](https://antoniangeloflore.com).
