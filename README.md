@@ -55,7 +55,8 @@ The workflow is designed for zero manual friction once configured:
 
 ## 🔒 Confidentiality Notice & B2B Collaboration
 
-* **Proprietary Software Asset (All Rights Reserved):** This repository serves as a functional and architectural showcase within the Professional Portfolio ([https://antoniangeloflore.com](https://antoniangeloflore.com)). For operational security and Non-Disclosure Agreement (NDA) compliance, the production source code and internal infrastructure credentials are not publicly exposed.
+🔒 **Proprietary Software Asset (All Rights Reserved)**: This repository serves as a functional and architectural showcase within the Professional Portfolio (https://antoniangeloflore.com — **note:** *video pitches are currently in Italian; both the portfolio portal and B2B technical delivery are available in English*). For operational security and NDA compliance, the source code and internal packaging are not publicly exposed.
+* 
 * **Custom B2B Integrations & Free 50-Row / Payload Evaluation:** Available for custom API/Webhook stabilization, high-volume ETL pipelines, and white-label licensing via an **asynchronous, zero-call workflow**. Connect on [LinkedIn](https://www.linkedin.com/in/antoniangelo-f-30003622/) or reach out through [antoniangeloflore.com](https://antoniangeloflore.com).
 
 ---
