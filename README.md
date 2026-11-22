@@ -16,7 +16,7 @@ Deployed and running live on a **dedicated Linux VPS**, it acts as a fault-toler
 ## 🎥 Live VPS Production & `b2b-dlq-hub` Integration Demo
 
 * **Live Architecture Benchmark:** **b2b-gateway-hub** is actively deployed on a Linux VPS and showcased in live technical video pitches working in tandem with [**b2b-dlq-hub**](https://github.com/pratico/b2b-dlq-hub) to ingest, route, and stress-test real payload streams under simulated endpoint failures.
-* **Watch the Video Pitch & Live Demos:** [https://antoniangeloflore.com](https://antoniangeloflore.com) *(Note: The portfolio portal and the two embedded technical video pitches are currently in Italian, while B2B engineering delivery, documentation, and asynchronous support are fully available in English).*
+* **Watch the Video Pitch & Live Demos:** [https://antoniangeloflore.com](https://antoniangeloflore.com) *(Note: Video pitches are currently in Italian with English subtitles available; both the portfolio portal and B2B engineering delivery, documentation, and asynchronous support are fully available in English).*
 
 ## 🎯 The Problem Solved
 
