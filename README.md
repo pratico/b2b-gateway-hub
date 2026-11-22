@@ -57,8 +57,6 @@ The workflow is designed for zero manual friction once configured:
 
 🔒 **Proprietary Software Asset (All Rights Reserved)**: This repository serves as a functional and architectural showcase within the Professional Portfolio (https://antoniangeloflore.com — **note:** *video pitches are currently in Italian; both the portfolio portal and B2B technical delivery are available in English*). For operational security and NDA compliance, the source code and internal packaging are not publicly exposed.
 
-🤝 **Custom B2B Pipelines & White-Label Inquiries:** Available for custom ETL/outreach automation, white-label SaaS licensing, and asynchronous technical consultations (no calls required). Connect via [antoniangeloflore.com](https://antoniangeloflore.com) or [LinkedIn](https://www.linkedin.com/in/antoniangelo-f-30003622/).
-
 🤝 **Custom B2B Integrations & Free 50-Row / Payload Evaluation:** Available for custom API/Webhook stabilization, high-volume ETL pipelines, and white-label licensing via an **asynchronous, zero-call workflow**. Connect on [LinkedIn](https://www.linkedin.com/in/antoniangelo-f-30003622/) or reach out through [antoniangeloflore.com](https://antoniangeloflore.com).
 
 ---
@@ -114,5 +112,6 @@ Nella gestione operativa quotidiana di PMI e progetti e-commerce, integrazioni f
 
 ## 🔒 Nota di Riservatezza & Collaborazioni B2B
 
-* **Asset Software Proprietario (Tutti i diritti riservati):** Questo repository ha finalità di presentazione funzionale e architetturale per il Portfolio Professionale ([https://antoniangeloflore.com](https://antoniangeloflore.com)). Per ragioni di sicurezza operativa e accordi di riservatezza (NDA), il codice sorgente di produzione e le specifiche infrastrutturali non sono esposti pubblicamente.
-* **Integrazioni B2B Custom & Test Gratuito:** Disponibile per messa in sicurezza di flussi API/Webhook, pipeline ETL ad alto volume e licenze White-Label con **operatività 100% asincrona (zero call)**. Contattami su [LinkedIn](https://www.linkedin.com/in/antoniangelo-f-30003622/) o tramite [antoniangeloflore.com](https://antoniangeloflore.com).
+🔒 **Asset Software Proprietario (Tutti i diritti riservati):** Questo repository ha finalità di presentazione funzionale e architetturale per il Portfolio Professionale ([https://antoniangeloflore.com](https://antoniangeloflore.com)). Per ragioni di sicurezza operativa e accordi di riservatezza (NDA), il codice sorgente di produzione e le specifiche infrastrutturali non sono esposti pubblicamente.
+
+🤝 **Integrazioni B2B Custom & Test Gratuito:** Disponibile per messa in sicurezza di flussi API/Webhook, pipeline ETL ad alto volume e licenze White-Label con **operatività 100% asincrona (zero call)**. Contattami su [LinkedIn](https://www.linkedin.com/in/antoniangelo-f-30003622/) o tramite [antoniangeloflore.com](https://antoniangeloflore.com).
